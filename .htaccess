@@ -1,0 +1,22 @@
+AddDefaultCharset utf-8
+
+RewriteEngine on
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php
+
+# AddDefaultCharset utf-8                   установка кодировки utf-8
+
+# RewriteEngine on                          включает режим перенаправления запросов
+# RewriteBase /                             установка базового URL для преобразований в контексте каталога
+#                                          ( в RewriteBase находится путь к .htaccess)
+
+# RewriteCond %{REQUEST_FILENAME} !-f       если в директории есть папка, соответсвующая адресу запроса,
+#                                           отдать ее в ответ
+# RewriteCond %{REQUEST_FILENAME} !-d       если в директории есть файл, соответсвующий адресу запроса,
+#                                           вернуть его в ответ
+
+# RewriteRule ^(.*)$ index.php              если файл или папка не найдены, перенаправить запрос на index.php
